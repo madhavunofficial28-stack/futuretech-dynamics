@@ -191,32 +191,32 @@ export default function Home() {
 
   const coreProducts = [
     {
-      id: "adas-l3-l4",
-      title: "ADAS L3 & L4 Systems",
-      description: "Advanced driver assistance with custom RADAR development.",
-      image: Home3,
-      tag: "Autonomous Systems"
-    },
-    {
-      id: "shark-fin-antennas",
-      title: "Shark Fin Antennas",
-      description: "Multi-band antennas with AM/FM, GPS, and LTE integration.",
+      id: "rf-antenna-technology",
+      title: "RF & Antenna Technology",
+      description: "High-performance radio frequency components, customized antennas, and microwave engineering.",
       image: Home4,
       tag: "RF & Connectivity"
     },
     {
-      id: "wireless-carplay",
-      title: "Wireless Charging & CarPlay",
-      description: "Qi-compliant fast wireless charging up to 15W. BLE/Wi-Fi modems for seamless wireless integration.",
+      id: "wireless-communication-systems",
+      title: "Wireless Communication Systems",
+      description: "Next-gen communication protocols, BLE/Wi-Fi modems, and seamless connectivity modules.",
       image: Home5,
       tag: "Wireless Tech"
     },
     {
-      id: "tpms-keyless",
-      title: "TPMS Solutions & Keyless Entry",
-      description: "Real-time tire pressure and temperature monitoring. Secure, encrypted keyless entry with passive functionality.",
+      id: "automotive-electronics-embedded",
+      title: "Automotive Electronics & Embedded Systems",
+      description: "Smart vehicle control units, real-time monitoring, and encrypted embedded hardware.",
       image: Home6,
       tag: "Smart Electronics"
+    },
+    {
+      id: "adas-systems",
+      title: "Advanced Driver Assistance Systems (ADAS)",
+      description: "Advanced autonomous driving assistance, in-house RADAR development, and AI safety mechanisms.",
+      image: Home3,
+      tag: "Autonomous Systems"
     }
   ];
 
@@ -458,26 +458,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. LET'S BUILD THE FUTURE OF MOBILITY TOGETHER */}
-      <section className="py-24 bg-[#0A192F]/95 backdrop-blur-md text-white relative overflow-hidden z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* 4. VISION & PARTNERSHIP SECTION (FULL SCREEN WIDTH MATCHED) */}
+      <section className="py-24 bg-white text-slate-800 relative overflow-hidden z-10 border-t border-slate-200 w-full">
+        <div className="w-full px-6 sm:px-8 lg:px-16 xl:px-24">
           <div ref={mobilityRef} className="grid lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-7">
-              <span className="text-[#0052FF] text-sm font-bold tracking-widest uppercase bg-blue-950/80 px-3.5 py-1 rounded-full border border-blue-800/50">
+              <span className="text-[#0052FF] text-sm font-bold tracking-widest uppercase bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
                 Vision & Partnership
               </span>
-              <h2 className="text-3xl sm:text-5xl font-extrabold mt-4 mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A192F] mt-4 mb-6 leading-tight">
                 Let’s Build the Future of Mobility Together
               </h2>
-              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                 Partner with Futuretech Dynamics to shape innovative solutions in automotive electronics, wireless connectivity, and intelligent systems.
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <Link 
                   to="/contact" 
-                  className="bg-[#0052FF] hover:bg-blue-600 text-white px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+                  className="bg-[#0052FF] hover:bg-blue-600 text-white px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
                 >
                   <span>Partner With Us</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -489,7 +489,7 @@ export default function Home() {
 
             <div className="lg:col-span-5">
               <Link to="/products" className="block relative group cursor-pointer">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/60 bg-slate-800">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200 bg-slate-100">
                   <img 
                     src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                     alt="Connected Smart Mobility Vehicle" 
