@@ -89,7 +89,7 @@ const productsData = {
     tag: "Drone Tech",
     image: Home5,
     description: "Precision field mapping, automated workflow systems, and high-endurance UAV solutions for agriculture and defense sectors.",
-    brochure: "/adas-l3-l4-brochure.pdf",
+    brochure: "/drone content.pdf",
     keyFeatures: [
       "Precision Field Mapping & Spraying: Enables accurate, automated operations transferable to autonomous agri-vehicles and defense ground units.",
       "Automated Workflow Systems: Intelligent route planning and flow control systems align with mission automation.",
