@@ -17,9 +17,9 @@ export default function Navbar() {
 
   const productItems = [
     { 
-      title: "RF & Antenna Technology", 
+      title: "Shark Fin Antenna", 
       path: "/products/rf-antenna-technology",
-      desc: "High-performance radio frequency components, customized antennas, and microwave engineering.", 
+      desc: "High-performance shark fin antennas engineered for vehicle connectivity, GPS, and multi-band RF reception.", 
       icon: (
         <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071a10 10 0 0114.142 0M2.929 8.929a15 15 0 0121.214 0" />
@@ -28,8 +28,8 @@ export default function Navbar() {
     },
     { 
       title: "Wireless Communication Systems", 
-      path: "/products/wireless-communication",
-      desc: "Next-gen communication protocols, BLE/Wi-Fi modems, and seamless connectivity modules.", 
+      path: "/products/wireless-communication-systems",
+      desc: "Next-gen communication protocols, high-speed connectivity modules, and seamless wireless data transfer.", 
       icon: (
         <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -37,22 +37,22 @@ export default function Navbar() {
       )
     },
     { 
-      title: "Automotive Electronics & Embedded Systems", 
-      path: "/products/automotive-electronics",
-      desc: "Smart vehicle control units, real-time monitoring, and encrypted embedded hardware.", 
-      icon: (
-        <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-        </svg>
-      )
-    },
-    { 
       title: "Advanced Driver Assistance Systems (ADAS)", 
-      path: "/products/adas-l3-l4",
+      path: "/products/adas-systems",
       desc: "Advanced autonomous driving assistance, in-house RADAR development, and AI safety mechanisms.", 
       icon: (
         <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      )
+    },
+    { 
+      title: "Customised Drone Solution", 
+      path: "/products/drone-solution",
+      desc: "Precision field mapping, automated workflow systems, and high-endurance UAV solutions for agriculture and defense.", 
+      icon: (
+        <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
         </svg>
       )
     }

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-/* image  */
-
+/* images */
 import Home3 from '../assets/home_pg-3-image.jpg';
 import Home4 from '../assets/home_pg-4-image.png';
 import Home5 from '../assets/home_pg-5-image.png';
@@ -14,60 +13,63 @@ gsap.registerPlugin(ScrollTrigger);
 
 const productsData = [
   {
-    id: "adas-l3-l4",
-    title: "Advanced Driver Assistance Systems (ADAS)",
-    badge: "Autonomous Driving",
-    desc: "AI-driven safety mechanisms and advanced driver assistance hardware enabling next-generation autonomous driving and collision avoidance.",
-    img: Home6,
-    features: [
-      "Adaptive Cruise Control: Keeps safe distance and speed automatically.",
-      "Lane Assist: Keeps drivers aligned and alerts on deviation.",
-      "Emergency Braking: Prevents collisions with rapid automatic braking.",
-      "Blind Spot & Parking: Improves awareness and safety at all times.",
-      "Sensor Fusion: Integrating Cameras, LiDAR, Radar, and GPS.",
-      "Driver Monitoring: AI-powered safety to reduce fatigue and enhance awareness."
-    ]
-  },
-  {
-    id: "automotive-electronics",
-    title: "Automotive Electronics & Embedded Systems",
-    badge: "Smart Embedded Systems",
-    desc: "Smart vehicle control units, electronic control modules (ECUs), and high-efficiency embedded hardware built to strict automotive standards.",
-    img: Home5,
-    features: [
-      "Embedded Hardware: Custom PCBs, amplifiers, and RF circuits built for efficiency.",
-      "ECU Integration: Seamless communication with CAN-bus and vehicle control units.",
-      "Signal Processing: Noise suppression and gain control for better cabin experience.",
-      "Automotive Quality: Rugged, reliable, and compliant with standards.",
-      "Smart Power: Low power consumption with optimal performance."
-    ]
-  },
-  {
-    id: "wireless-communication",
-    title: "Wireless Communication Systems",
-    badge: "Connected Mobility",
-    desc: "Next-gen automotive communication protocols, wireless charging, and seamless connectivity modules designed for modern vehicles.",
-    img: Home4,
-    features: [
-      "Seamless Connectivity: BLE + Wi-Fi solutions for Apple CarPlay & Android Auto.",
-      "Telematics & GPS: GNSS modules enable accurate navigation and vehicle tracking.",
-      "Keyless Entry: Secure RF modules with rolling code encryption.",
-      "Wireless Charging: Qi-certified 15W charging pads for devices and EVs.",
-      "Made in India: Indigenized solutions reduce import dependency and lower cost."
-    ]
-  },
-  {
     id: "rf-antenna-technology",
-    title: "RF & Antenna Technology",
-    badge: "RF & Connectivity",
-    desc: "High-performance radio frequency components, matching circuits, and multi-band antenna modules engineered for automotive and industrial use.",
+    title: "Shark Fin Antenna - Custom Design & Manufacturing",
+    badge: "Antenna Tech",
+    desc: "High-performance shark fin antennas engineered for superior vehicle connectivity, GPS, and multi-band radio frequency reception.",
     img: Home3,
     features: [
-      "Multi-Band Antennas: Shark Fin antenna designs combine FM, LTE, GPS, and Wi-Fi in one housing.",
-      "RF Optimization: Matching circuits and amplifiers achieve superior VSWR values and high gain.",
-      "Custom Development: In-house antenna design tailored for automotive, defense, and consumer use.",
-      "Reliability: Weather-resistant and precisely manufactured for long-lasting performance.",
-      "Innovation: From cars to drones, RF expertise ensures stronger signals and better connectivity."
+      "AM/FM Performance: VSWR ≤ 1.4 | Gain ≥ 20.5 dB.",
+      "GPS Performance: VSWR ≤ 1.5 | Gain ≥ 33 dB.",
+      "LTE Connectivity: VSWR ≤ 1.5 (Typical).",
+      "Custom Designs: Fully tailored shapes and sizes to fit unique vehicle requirements.",
+      "Ceramic Patch: GPS/GNSS antennas with Low Noise Amplifiers (LNAs).",
+      "Durability: Aerodynamic radome housing built for rugged weather."
+    ]
+  },
+  {
+    id: "wireless-communication-systems",
+    title: "Wireless Communication Systems",
+    badge: "Wireless Tech",
+    desc: "Next-gen communication protocols, high-speed connectivity modules, and seamless wireless data transfer systems.",
+    img: Home4,
+    features: [
+      "High-Speed Data Transfer: Supports advanced communication protocols for modern vehicles.",
+      "Seamless Integration: Built for robust OEM compatibility and smooth infotainment linkage.",
+      "Automotive-Grade Reliability: Designed to withstand extreme environmental conditions inside vehicles.",
+      "Custom Solutions: Tailored wireless interface modules for diverse automotive platforms.",
+      "RF Transceivers: High-frequency circuits with impedance matching.",
+      "Diagnostics: Robust vehicle telemetry and communication modules."
+    ]
+  },
+  {
+    id: "adas-systems",
+    title: "Advanced Driver Assistance Systems (ADAS)",
+    badge: "Autonomous Systems",
+    desc: "Advanced autonomous driving assistance, in-house RADAR development, and AI safety mechanisms.",
+    img: Home6,
+    features: [
+      "In-House RADAR Development: Precision-designed for reliable detection and tracking.",
+      "Telemetry Ecosystem: Real-time V2V and V2I communication.",
+      "Custom Algorithms: Proprietary automation algorithms for decision-making and safety.",
+      "Modular Design: Customizable and upgradable systems for seamless vehicle integration.",
+      "Testing Lab: Comprehensive in-house testing capability up to 110 GHz.",
+      "Domain Controllers: Centralized ECU interfaces and sensor fusion processing units."
+    ]
+  },
+  {
+    id: "drone-solution",
+    title: "Customised Drone Solution",
+    badge: "Drone Tech",
+    desc: "Precision field mapping, automated workflow systems, and high-endurance UAV solutions for agriculture and defense sectors.",
+    img: Home5,
+    features: [
+      "Precision Field Mapping & Spraying: Enables accurate, automated operations transferable to autonomous agri-vehicles.",
+      "Automated Workflow Systems: Intelligent route planning and flow control systems align with mission automation.",
+      "Battery & Power Efficiency: High-endurance, fast-charging batteries offer scalable insights for EV farm vehicles and UAVs.",
+      "Terrain-Adaptive Capability: Proven drone adaptability across varying altitudes and environments.",
+      "Dual-Use Foundation: Supports both smart farming and tactical defense operations.",
+      "Real-Time Telemetry: Live data link transceivers and autonomous flight controllers."
     ]
   }
 ];
@@ -133,7 +135,7 @@ export default function Products() {
           Our Flagship Innovations
         </span>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0A192F] mt-4 mb-4">
-          Core Product 
+          Core Products 
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
           Explore our range of high-frequency automotive electronics and intelligent mobility solutions.

@@ -28,7 +28,6 @@ export default function Home() {
   const aboutRef = useRef(null);
   const productsRef = useRef(null);
   const mobilityRef = useRef(null);
-  const ctaRef = useRef(null);
 
   const navigate = useNavigate();
 
@@ -186,25 +185,18 @@ export default function Home() {
 
   const coreProducts = [
     {
-      id: "rf-antenna-technology",
-      title: "RF & Antenna Technology",
-      description: "High-performance radio frequency components, customized antennas, and microwave engineering.",
+      id: "shark-antenna",
+      title: "Shark Antenna",
+      description: "High-performance shark fin antennas engineered for superior vehicle connectivity, GPS, and multi-band radio frequency reception.",
       image: Home3,
-      tag: "RF & Connectivity"
+      tag: "Antenna Tech"
     },
     {
       id: "wireless-communication-systems",
       title: "Wireless Communication Systems",
-      description: "Next-gen communication protocols, BLE/Wi-Fi modems, and seamless connectivity modules.",
+      description: "Next-gen communication protocols, high-speed connectivity modules, and seamless wireless data transfer systems.",
       image: Home4,
       tag: "Wireless Tech"
-    },
-    {
-      id: "automotive-electronics-embedded",
-      title: "Automotive Electronics & Embedded Systems",
-      description: "Smart vehicle control units, real-time monitoring, and encrypted embedded hardware.",
-      image: Home5,
-      tag: "Smart Electronics"
     },
     {
       id: "adas-systems",
@@ -212,6 +204,13 @@ export default function Home() {
       description: "Advanced autonomous driving assistance, in-house RADAR development, and AI safety mechanisms.",
       image: Home6,
       tag: "Autonomous Systems"
+    },
+    {
+      id: "drone-solution",
+      title: "Customised Drone Solution",
+      description: "Precision field mapping, automated workflow systems, and high-endurance UAV solutions for agriculture and defense sectors.",
+      image: Home5,
+      tag: "Drone Tech"
     }
   ];
 

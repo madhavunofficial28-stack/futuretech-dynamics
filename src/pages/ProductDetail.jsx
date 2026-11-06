@@ -1,21 +1,69 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
-import { m } from 'framer-motion';
 
-/* image  */
-
+/* images */
 import Home3 from '../assets/home_pg-3-image.jpg';
 import Home4 from '../assets/home_pg-4-image.png';
 import Home5 from '../assets/home_pg-5-image.png';
 import Home6 from '../assets/home_pg-6-image.png';
 
 const productsData = {
-  "adas-l3-l4": {
-    title: "Advanced Driver Assistance Systems (ADAS) L3 & L4",
+  "rf-antenna-technology": {
+    title: "Shark Fin Antenna - Custom Design & Manufacturing",
+    tag: "Antenna Tech",
+    image: Home3,
+    description: "High-performance shark fin antennas engineered for superior vehicle connectivity, GPS, and multi-band radio frequency reception.",
+    brochure: "/Shark-Fin-Antenna-Brochure.pdf",
+    keyFeatures: [
+      "AM/FM Performance: VSWR ≤ 1.4 | Gain ≥ 20.5 dB.",
+      "GPS Performance: VSWR ≤ 1.5 | Gain ≥ 33 dB.",
+      "LTE Connectivity: VSWR ≤ 1.5 (Typical).",
+      "Custom Designs: Fully tailored shapes and sizes to fit unique vehicle requirements."
+    ],
+    coreComponents: [
+      "Ceramic Patch GPS/GNSS Antennas",
+      "Low Noise Amplifiers (LNAs)",
+      "Multi-Band Cellular Elements",
+      "Aerodynamic Radome Housing"
+    ],
+    capabilities: [
+      "Rapid prototyping for testing and validation",
+      "Performance tuning optimized for global standards",
+      "Seamless integration into automotive and aerospace applications"
+    ],
+    whyChooseUs: "Precision-engineered end-to-end manufacturing tuned for superior global communication standards and rugged durability."
+  },
+  "wireless-communication-systems": {
+    title: "Wireless Communication Systems",
+    tag: "Wireless Tech",
+    image: Home4,
+    description: "Next-gen communication protocols, high-speed connectivity modules, and seamless wireless data transfer systems.",
+    brochure: "/Wireless-Charging_BLE-Wi-Fi-Modems-Brochure.pdf",
+    keyFeatures: [
+      "High-Speed Data Transfer: Supports advanced communication protocols for modern vehicles.",
+      "Seamless Integration: Built for robust OEM compatibility and smooth infotainment linkage.",
+      "Automotive-Grade Reliability: Designed to withstand extreme environmental conditions inside vehicles.",
+      "Custom Solutions: Tailored wireless interface modules for diverse automotive platforms."
+    ],
+    coreComponents: [
+      "High-Frequency RF Transceivers",
+      "Wireless Communication Modules",
+      "Impedance-Matched RF Circuits",
+      "Automotive ECU Interface Connectors"
+    ],
+    capabilities: [
+      "Seamless transmission of media, navigation, and voice controls",
+      "Robust vehicle telemetry and diagnostic data exchange",
+      "Custom RF tuning and interface development"
+    ],
+    whyChooseUs: "Scalable, reliable, and cutting-edge wireless architecture ensuring seamless connectivity across modern smart vehicles."
+  },
+  "adas-systems": {
+    title: "Advanced Driver Assistance Systems (ADAS)",
     tag: "Autonomous Systems",
-    image:Home6,
-    description: "High-performance RADAR systems and advanced automation solutions enabling next-generation autonomous driving, object detection, and collision avoidance.",
+    image: Home6,
+    description: "Advanced autonomous driving assistance, in-house RADAR development, and AI safety mechanisms.",
     brochure: "/adas-l3-l4-brochure.pdf",
     keyFeatures: [
       "In-House RADAR Development: Precision-designed for reliable detection and tracking.",
@@ -36,80 +84,30 @@ const productsData = {
     ],
     whyChooseUs: "Backed by comprehensive in-house testing up to 110 GHz, ensuring extreme reliability and scalable future-ready integration."
   },
-  "automotive-electronics": {
-    title: "Automotive Electronics & Embedded Systems",
-    tag: "Smart Embedded Systems",
+  "drone-solution": {
+    title: "Customised Drone Solution",
+    tag: "Drone Tech",
     image: Home5,
-    description: "Smart vehicle control units, electronic control modules (ECUs), and high-efficiency embedded hardware built to strict automotive standards.",
-    brochure: "/Keyless-Entry-System_Tyre-Pressure-Monitoring-Brochure.pdf",
+    description: "Precision field mapping, automated workflow systems, and high-endurance UAV solutions for agriculture and defense sectors.",
+    brochure: "/adas-l3-l4-brochure.pdf",
     keyFeatures: [
-      "Embedded Hardware: Custom PCBs, amplifiers, and RF circuits built for efficiency.",
-      "ECU Integration: Seamless communication with CAN-bus and vehicle control units.",
-      "Signal Processing: Noise suppression and gain control for better cabin experience.",
-      "Automotive Quality: Rugged, reliable, and compliant with standards."
+      "Precision Field Mapping & Spraying: Enables accurate, automated operations transferable to autonomous agri-vehicles and defense ground units.",
+      "Automated Workflow Systems: Intelligent route planning and flow control systems align with mission automation.",
+      "Battery & Power Efficiency: High-endurance, fast-charging batteries offer scalable insights for EV farm vehicles and defense UAVs.",
+      "Terrain-Adaptive Capability: Proven drone adaptability across varying altitudes and environments."
     ],
     coreComponents: [
-      "Custom Microcontroller Boards",
-      "CAN-Bus Interface Modules",
-      "Power Management ICs",
-      "Ruggedized Enclosures"
+      "High-Endurance UAV Frameworks",
+      "Autonomous Flight Controllers & GPS Modules",
+      "Precision Spraying & Mapping Payloads",
+      "Real-Time Telemetry & Data Link Transceivers"
     ],
     capabilities: [
-      "Real-time vehicle telemetry processing",
-      "Robust power distribution and surge protection",
-      "High-temperature tolerance in engine bays"
+      "Agricultural crop monitoring and automated spraying",
+      "Defense surveillance and border patrolling missions",
+      "Terrain-adaptive route planning and real-time data transmission"
     ],
-    whyChooseUs: "Compliant with strict automotive quality standards ensuring zero-failure rates under heavy industrial usage."
-  },
-  "wireless-communication": {
-    title: "Wireless Charging Solutions & BLE/Wi-Fi Modems",
-    tag: "Connected Mobility",
-    image: Home4,
-    description: "Advanced 15W Qi-compliant wireless charging systems and BLE/Wi-Fi modems enabling seamless wireless Apple CarPlay and Android Auto.",
-    brochure: "/Wireless-Charging_BLE-Wi-Fi-Modems-Brochure.pdf",
-    keyFeatures: [
-      "Fast Charging: Supports up to 15W fast wireless charging for devices and EVs.",
-      "Qi Protocol Compliance: Fully compliant with latest Qi standards for universal device support.",
-      "Dual-Band Wi-Fi: Uses Bluetooth Low Energy (BLE) for pairing and Wi-Fi for high-speed data transfer.",
-      "Made in India: 100% indigenously developed cost-effective alternative to imports."
-    ],
-    coreComponents: [
-      "Qi Certified Charging Coils & Transmitters",
-      "Bluetooth Low Energy (BLE) Modules",
-      "Wi-Fi Communication Transceivers",
-      "Active Thermal & Power Management ICs"
-    ],
-    capabilities: [
-      "Seamless transmission of navigation, media, and voice control",
-      "Automotive-grade modem integration with vehicle ECUs",
-      "Customizable interface solutions for diverse infotainment platforms"
-    ],
-    whyChooseUs: "Scalable, reliable, and entirely Made in India, lowering deployment costs while delivering superior charging and connectivity performance."
-  },
-  "rf-antenna-technology": {
-    title: "Shark Fin Antenna - Custom Design & Manufacturing",
-    tag: "RF & Connectivity",
-    image: Home3,
-    description: "Custom-designed Shark Fin Antennas integrating AM/FM, GPS, and LTE capabilities into a single sleek, aerodynamic housing.",
-    brochure: "/Shark-Fin-Antenna-Brochure.pdf",
-    keyFeatures: [
-      "AM/FM Performance: VSWR ≤ 1.4 | Gain ≥ 20.5 dB.",
-      "GPS Performance: VSWR ≤ 1.5 | Gain ≥ 33 dB.",
-      "LTE Connectivity: VSWR ≤ 1.5 (Typical).",
-      "Custom Designs: Fully tailored shapes and sizes to fit unique vehicle requirements."
-    ],
-    coreComponents: [
-      "Ceramic Patch GPS/GNSS Antennas",
-      "Low Noise Amplifiers (LNAs)",
-      "Multi-Band Cellular Elements",
-      "Aerodynamic Radome Housing"
-    ],
-    capabilities: [
-      "Rapid prototyping for testing and validation",
-      "Performance tuning optimized for global standards",
-      "Seamless integration into automotive and aerospace applications"
-    ],
-    whyChooseUs: "Precision-engineered end-to-end manufacturing tuned for superior global communication standards and rugged durability."
+    whyChooseUs: "Dual-use tech foundation supporting both smart farming and tactical defense operations with high structural endurance."
   }
 };
 
