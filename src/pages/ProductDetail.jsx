@@ -3,13 +3,20 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { m } from 'framer-motion';
 
+/* image  */
+
+import Home3 from '../assets/home_pg-3-image.jpg';
+import Home4 from '../assets/home_pg-4-image.png';
+import Home5 from '../assets/home_pg-5-image.png';
+import Home6 from '../assets/home_pg-6-image.png';
+
 const productsData = {
   "adas-l3-l4": {
     title: "Advanced Driver Assistance Systems (ADAS) L3 & L4",
     tag: "Autonomous Systems",
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image:Home6,
     description: "High-performance RADAR systems and advanced automation solutions enabling next-generation autonomous driving, object detection, and collision avoidance.",
-    brochure: "#",
+    brochure: "/adas-l3-l4-brochure.pdf",
     keyFeatures: [
       "In-House RADAR Development: Precision-designed for reliable detection and tracking.",
       "Telemetry Ecosystem: Real-time V2V and V2I communication.",
@@ -32,9 +39,9 @@ const productsData = {
   "automotive-electronics": {
     title: "Automotive Electronics & Embedded Systems",
     tag: "Smart Embedded Systems",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: Home5,
     description: "Smart vehicle control units, electronic control modules (ECUs), and high-efficiency embedded hardware built to strict automotive standards.",
-    brochure: "#",
+    brochure: "/Keyless-Entry-System_Tyre-Pressure-Monitoring-Brochure.pdf",
     keyFeatures: [
       "Embedded Hardware: Custom PCBs, amplifiers, and RF circuits built for efficiency.",
       "ECU Integration: Seamless communication with CAN-bus and vehicle control units.",
@@ -57,34 +64,34 @@ const productsData = {
   "wireless-communication": {
     title: "Wireless Charging Solutions & BLE/Wi-Fi Modems",
     tag: "Connected Mobility",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    description: "Advanced 15W Qi-compliant wireless charging systems and BLE/Wi-Fi modems enabling seamless wireless Apple CarPlay and Android Auto[cite: 3].",
-    brochure: "#",
+    image: Home4,
+    description: "Advanced 15W Qi-compliant wireless charging systems and BLE/Wi-Fi modems enabling seamless wireless Apple CarPlay and Android Auto.",
+    brochure: "/Wireless-Charging_BLE-Wi-Fi-Modems-Brochure.pdf",
     keyFeatures: [
-      "Fast Charging: Supports up to 15W fast wireless charging for devices and EVs[cite: 3].",
-      "Qi Protocol Compliance: Fully compliant with latest Qi standards for universal device support[cite: 3].",
-      "Dual-Band Wi-Fi: Uses Bluetooth Low Energy (BLE) for pairing and Wi-Fi for high-speed data transfer[cite: 3].",
-      "Made in India: 100% indigenously developed cost-effective alternative to imports[cite: 3]."
+      "Fast Charging: Supports up to 15W fast wireless charging for devices and EVs.",
+      "Qi Protocol Compliance: Fully compliant with latest Qi standards for universal device support.",
+      "Dual-Band Wi-Fi: Uses Bluetooth Low Energy (BLE) for pairing and Wi-Fi for high-speed data transfer.",
+      "Made in India: 100% indigenously developed cost-effective alternative to imports."
     ],
     coreComponents: [
-      "Qi Certified Charging Coils & Transmitters[cite: 3]",
-      "Bluetooth Low Energy (BLE) Modules[cite: 3]",
-      "Wi-Fi Communication Transceivers[cite: 3]",
+      "Qi Certified Charging Coils & Transmitters",
+      "Bluetooth Low Energy (BLE) Modules",
+      "Wi-Fi Communication Transceivers",
       "Active Thermal & Power Management ICs"
     ],
     capabilities: [
-      "Seamless transmission of navigation, media, and voice control[cite: 3]",
-      "Automotive-grade modem integration with vehicle ECUs[cite: 3]",
-      "Customizable interface solutions for diverse infotainment platforms[cite: 3]"
+      "Seamless transmission of navigation, media, and voice control",
+      "Automotive-grade modem integration with vehicle ECUs",
+      "Customizable interface solutions for diverse infotainment platforms"
     ],
-    whyChooseUs: "Scalable, reliable, and entirely Made in India, lowering deployment costs while delivering superior charging and connectivity performance[cite: 3]."
+    whyChooseUs: "Scalable, reliable, and entirely Made in India, lowering deployment costs while delivering superior charging and connectivity performance."
   },
   "rf-antenna-technology": {
     title: "Shark Fin Antenna - Custom Design & Manufacturing",
     tag: "RF & Connectivity",
-    image: "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: Home3,
     description: "Custom-designed Shark Fin Antennas integrating AM/FM, GPS, and LTE capabilities into a single sleek, aerodynamic housing.",
-    brochure: "#",
+    brochure: "/Shark-Fin-Antenna-Brochure.pdf",
     keyFeatures: [
       "AM/FM Performance: VSWR ≤ 1.4 | Gain ≥ 20.5 dB.",
       "GPS Performance: VSWR ≤ 1.5 | Gain ≥ 33 dB.",
@@ -260,7 +267,7 @@ export default function ProductDetail() {
             <ul className="space-y-3.5">
               {product.capabilities.map((cap, idx) => (
                 <li key={idx} className="flex items-center gap-3 bg-blue-50/50 p-4 rounded-xl text-gray-800 font-semibold text-sm sm:text-base border border-blue-100/60">
-                  <span>🚀</span>
+                  <span>~</span>
                   <span>{cap}</span>
                 </li>
               ))}

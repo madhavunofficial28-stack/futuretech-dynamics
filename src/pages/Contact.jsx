@@ -12,6 +12,9 @@ export default function Contact() {
     subject: '',
     message: ''
   });
+  const [isSending, setIsSending] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -44,14 +47,35 @@ export default function Contact() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    gsap.to(e.target.querySelector('button'), {
-      scale: 0.95,
-      duration: 0.1,
-      yoyo: true,
-      repeat: 1
-    });
+    setIsSending(true);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/send-company-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitted(true);
+        setFormData({ fullName: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Email Send Error:', error);
+      setErrorMessage('Failed to send message. Please ensure the backend server is running.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -69,7 +93,7 @@ export default function Contact() {
                 {/* LinkedIn Link */}
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="icon linkedin">
                   <span className="tooltip">LinkedIn</span>
-                  <svg viewBox="0 0 448 512" height="1.2em" fill="currentColor" xmlns="https://www.linkedin.com/Company/Futuretech-dynamics?_l=en_US">
+                  <svg viewBox="0 0 448 512" height="1.2em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
                   </svg>
                 </a>
@@ -78,7 +102,7 @@ export default function Contact() {
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="icon twitter">
                   <span className="tooltip">Twitter</span>
                   <svg height="1.8em" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429" />
+                    <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429" />
                   </svg>
                 </a>
 
@@ -104,12 +128,12 @@ export default function Contact() {
 
             {/* Links (Email & Phone only) */}
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-neutral-500 font-medium">
-              <a href="mailto:info@futuretechdynamics.in" className="hover:text-neutral-900 transition-colors">info@futuretechdynamics.in</a>
+              <a href="mailto:info@futuretechdynamics.in" className="text-blue-600 hover:text-blue-700 transition-colors">info@futuretechdynamics.in</a>
               <span>•</span>
-              <a href="tel:+919173300247" className="hover:text-neutral-900 transition-colors">+91 9173300247</a>
+              <a href="tel:+919173300247" className="text-blue-600 hover:text-blue-700 transition-colors">+91 9173300247</a>
             </div>
 
-            {/* World Map Section */}
+           {/* World Map Section */}
             <div>
               <div className="relative max-w-lg h-64 overflow-hidden rounded-2xl pointer-events-none select-none flex items-center justify-center">
                 <img 
@@ -137,10 +161,10 @@ export default function Contact() {
                   href="https://www.google.com/maps/search/?api=1&query=Vadodara%2C+390001%2C+Gujarat%2C+India"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group text-xs sm:text-sm text-neutral-500 font-medium hover:text-neutral-900 transition-colors inline-flex items-center gap-1.5"
+                  className="group text-xs sm:text-sm text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1.5 font-medium"
                 >
                   <svg 
-                    className="w-4 h-4 text-neutral-400 group-hover:text-blue-600 transition-colors" 
+                    className="w-4 h-4 text-blue-500 group-hover:text-blue-700 transition-colors" 
                     fill="none" 
                     stroke="currentColor" 
                     strokeWidth="2" 
@@ -170,10 +194,22 @@ export default function Contact() {
               }}
             />
 
+            {submitted && (
+              <div className="mb-4 p-3 bg-emerald-50 text-emerald-800 rounded-xl text-xs font-semibold relative z-10">
+                Inquiry sent successfully with PDF report!
+              </div>
+            )}
+
+            {errorMessage && (
+              <div className="mb-4 p-3 bg-rose-50 text-rose-800 rounded-xl text-xs font-semibold relative z-10">
+                {errorMessage}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
               {/* Full name */}
               <div>
-                <label className="block text-xs font-semibold text-neutral-700 mb-2">
+                <label className="block text-xs font-semibold text-blue-600 mb-2">
                   Full name
                 </label>
                 <input 
@@ -189,7 +225,7 @@ export default function Contact() {
 
               {/* Email Address */}
               <div>
-                <label className="block text-xs font-semibold text-neutral-700 mb-2">
+                <label className="block text-xs font-semibold text-blue-600 mb-2">
                   Email Address
                 </label>
                 <input 
@@ -205,7 +241,7 @@ export default function Contact() {
 
               {/* Subject */}
               <div>
-                <label className="block text-xs font-semibold text-neutral-700 mb-2">
+                <label className="block text-xs font-semibold text-blue-600 mb-2">
                   Subject
                 </label>
                 <input 
@@ -220,7 +256,7 @@ export default function Contact() {
 
               {/* Message */}
               <div>
-                <label className="block text-xs font-semibold text-neutral-700 mb-2">
+                <label className="block text-xs font-semibold text-blue-600 mb-2">
                   Message
                 </label>
                 <textarea 
@@ -230,6 +266,7 @@ export default function Contact() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white rounded-xl border border-neutral-200 text-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900/10 focus:border-neutral-400 transition-all shadow-[0_1px_2px_rgba(0,0,0,0.04)] resize-none"
                   placeholder="Type your message here"
+                  required
                 />
               </div>
 
@@ -237,10 +274,11 @@ export default function Contact() {
               <div className="pt-2">
                 <button 
                   type="submit" 
-                  className="group/btn relative px-6 py-2.5 bg-[#18181B] hover:bg-neutral-900 text-white font-medium text-xs rounded-lg overflow-hidden transition-all shadow-md active:scale-95"
+                  disabled={isSending}
+                  className="group/btn relative px-6 py-2.5 bg-[#18181B] hover:bg-neutral-900 text-white font-medium text-xs rounded-lg overflow-hidden transition-all shadow-md active:scale-95 disabled:opacity-50 cursor-pointer"
                 >
                   <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-blue-400/40 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 ease-in-out transform -skew-x-12 pointer-events-none" />
-                  <span className="relative z-10">Submit</span>
+                  <span className="relative z-10">{isSending ? 'Sending...' : 'Submit'}</span>
                 </button>
               </div>
             </form>

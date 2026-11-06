@@ -18,6 +18,7 @@ export default function Navbar() {
   const productItems = [
     { 
       title: "RF & Antenna Technology", 
+      path: "/products/rf-antenna-technology",
       desc: "High-performance radio frequency components, customized antennas, and microwave engineering.", 
       icon: (
         <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,6 +28,7 @@ export default function Navbar() {
     },
     { 
       title: "Wireless Communication Systems", 
+      path: "/products/wireless-communication",
       desc: "Next-gen communication protocols, BLE/Wi-Fi modems, and seamless connectivity modules.", 
       icon: (
         <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,6 +38,7 @@ export default function Navbar() {
     },
     { 
       title: "Automotive Electronics & Embedded Systems", 
+      path: "/products/automotive-electronics",
       desc: "Smart vehicle control units, real-time monitoring, and encrypted embedded hardware.", 
       icon: (
         <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,6 +48,7 @@ export default function Navbar() {
     },
     { 
       title: "Advanced Driver Assistance Systems (ADAS)", 
+      path: "/products/adas-l3-l4",
       desc: "Advanced autonomous driving assistance, in-house RADAR development, and AI safety mechanisms.", 
       icon: (
         <svg className="w-5 h-5 text-[#0052FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,7 +129,7 @@ export default function Navbar() {
                       <div className="col-span-2 grid grid-cols-2 gap-3">
                         {productItems.map((item, idx) => (
                           <Link 
-                            to="/products" 
+                            to={item.path} 
                             key={idx} 
                             onClick={() => setActive(null)} 
                             className="group relative flex flex-col justify-between p-4 rounded-2xl bg-slate-50/60 hover:bg-slate-100/80 border border-slate-100 hover:border-slate-300 transition-all duration-300 shadow-sm"
@@ -167,7 +171,7 @@ export default function Navbar() {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/80 to-transparent pointer-events-none" />
 
                         <div className="relative z-10">
-                          <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-wider mb-4 border border-white/20">
+                          <span className="inline-block px-3 py-1 bg-white/25 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-wider mb-4 border border-white/20">
                             Next-Gen Tech
                           </span>
                           <h4 className="text-2xl font-extrabold leading-tight tracking-tight drop-shadow-md">
@@ -210,19 +214,6 @@ export default function Navbar() {
               Contact Us
             </Link>
           </nav>
-
-          {/* RIGHT SOCIAL ICONS */}
-          <div className="flex items-center space-x-4 pl-4 border-l border-slate-200 text-slate-500">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#0052FF] transition-colors">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-[#0052FF] transition-colors">
-              <svg className="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#0052FF] transition-colors">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-          </div>
         </div>
 
         {/* MOBILE MENU BUTTON */}
@@ -258,7 +249,7 @@ export default function Navbar() {
             >
               <div>
                 <div className="flex justify-between items-center mb-12">
-                  <span className="text-xs font-bold tracking-widest text-slate-400 uppercase">Navigation</span>
+                  <img src={logoImg} alt="FutureTech Dynamics" className="h-10 w-auto object-contain" />
                   <button 
                     onClick={() => setMobileMenuOpen(false)}
                     className="p-2 text-slate-500 hover:text-slate-900 transition-colors"

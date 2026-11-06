@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+/* image  */
+
+import Home3 from '../assets/home_pg-3-image.jpg';
+import Home4 from '../assets/home_pg-4-image.png';
+import Home5 from '../assets/home_pg-5-image.png';
+import Home6 from '../assets/home_pg-6-image.png';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const productsData = [
@@ -11,7 +18,7 @@ const productsData = [
     title: "Advanced Driver Assistance Systems (ADAS)",
     badge: "Autonomous Driving",
     desc: "AI-driven safety mechanisms and advanced driver assistance hardware enabling next-generation autonomous driving and collision avoidance.",
-    img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    img: Home6,
     features: [
       "Adaptive Cruise Control: Keeps safe distance and speed automatically.",
       "Lane Assist: Keeps drivers aligned and alerts on deviation.",
@@ -26,7 +33,7 @@ const productsData = [
     title: "Automotive Electronics & Embedded Systems",
     badge: "Smart Embedded Systems",
     desc: "Smart vehicle control units, electronic control modules (ECUs), and high-efficiency embedded hardware built to strict automotive standards.",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    img: Home5,
     features: [
       "Embedded Hardware: Custom PCBs, amplifiers, and RF circuits built for efficiency.",
       "ECU Integration: Seamless communication with CAN-bus and vehicle control units.",
@@ -40,7 +47,7 @@ const productsData = [
     title: "Wireless Communication Systems",
     badge: "Connected Mobility",
     desc: "Next-gen automotive communication protocols, wireless charging, and seamless connectivity modules designed for modern vehicles.",
-    img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    img: Home4,
     features: [
       "Seamless Connectivity: BLE + Wi-Fi solutions for Apple CarPlay & Android Auto.",
       "Telematics & GPS: GNSS modules enable accurate navigation and vehicle tracking.",
@@ -54,7 +61,7 @@ const productsData = [
     title: "RF & Antenna Technology",
     badge: "RF & Connectivity",
     desc: "High-performance radio frequency components, matching circuits, and multi-band antenna modules engineered for automotive and industrial use.",
-    img: "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    img: Home3,
     features: [
       "Multi-Band Antennas: Shark Fin antenna designs combine FM, LTE, GPS, and Wi-Fi in one housing.",
       "RF Optimization: Matching circuits and amplifiers achieve superior VSWR values and high gain.",
@@ -126,7 +133,7 @@ export default function Products() {
           Our Flagship Innovations
         </span>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0A192F] mt-4 mb-4">
-          Core Product Timeline
+          Core Product 
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
           Explore our range of high-frequency automotive electronics and intelligent mobility solutions.
