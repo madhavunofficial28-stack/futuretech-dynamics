@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
-import Capabilties2 from "../assets/Capabilities_pg-2-image.png";
-import Capabilties4 from "../assets/Capabilities_pg-4-image.png";
+import Capabilties2 from "../assets/Capabilities_pg-2-image.jpg";
+import Capabilties4 from "../assets/Capabilities_pg-4-image.jpg";
 
 const CAPABILITIES_DATA = [
   {
