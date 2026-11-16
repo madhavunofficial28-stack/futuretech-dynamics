@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+/* images */
+import about1 from "../assets/about_pg-1-image.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -209,7 +211,7 @@ export default function About() {
       <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] sm:h-[480px] border border-slate-200 bg-slate-900 w-full">
         <div className="absolute inset-0 bg-gradient-to-tr from-[#0A192F]/40 via-transparent to-blue-500/10 group-hover:opacity-20 transition duration-500 z-10 pointer-events-none"></div>
         <img 
-          src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+          src= {about1} 
           alt="Smart Automotive Concept" 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
         />

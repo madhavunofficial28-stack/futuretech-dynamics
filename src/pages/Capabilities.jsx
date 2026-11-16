@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
+import Capabilties2 from "../assets/Capabilities_pg-2-image.png";
+import Capabilties4 from "../assets/Capabilities_pg-4-image.png";
+
 const CAPABILITIES_DATA = [
   {
     id: "design-dev",
@@ -25,7 +28,7 @@ const CAPABILITIES_DATA = [
     category: "100% Indigenous Assembly",
     badge: "End-to-End & PCB Assembly",
     description: "Complete manufacturing solutions from prototype to high-volume production, integrated with advanced PCB assembly capabilities.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: Capabilties2,
     features: [
       "End-to-End Manufacturing: Prototype to Production",
       "Rapid Prototyping & Quality Control",
@@ -55,7 +58,7 @@ const CAPABILITIES_DATA = [
     category: "OEM & Field Lifecycle",
     badge: "Vehicle-Level V2X",
     description: "End-to-end vehicle-level system integration, CAN/LIN telemetry setup, seamless Tier-1 & OEM co-engineering, and dedicated long-term technical support across global supply chains.",
-    image: "https://images.unsplash.com/photo-1558441719-670b357021bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: Capabilties4,
     features: [
       "Vehicle CAN / LIN / Ethernet Integration",
       "Direct Tier-1 & OEM Co-Engineering",

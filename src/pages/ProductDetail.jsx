@@ -4,7 +4,7 @@ import gsap from 'gsap';
 
 /* images */
 import Home3 from '../assets/home_pg-3-image.jpg';
-import Home4 from '../assets/home_pg-4-image.png';
+import Home4 from '../assets/home_pg-4-image.jpg';
 import Home5 from '../assets/home_pg-5-image.png';
 import Home6 from '../assets/home_pg-6-image.png';
 
@@ -13,7 +13,7 @@ const productsData = {
     title: "Shark Fin Antenna - Custom Design & Manufacturing",
     tag: "Antenna Tech",
     image: Home3,
-    description: "High-performance shark fin antennas engineered for superior vehicle connectivity, GPS, and multi-band radio frequency reception.",
+    description: "High-performance shark fin antennas engineered for superior vehicle connectivity, GPS, and multi-band radio frequency reception. Our advanced manufacturing ensures antennas are tailored to any shape, size, or application, meeting global communication standards with precision.",
     brochure: "/Shark-Fin-Antenna-Brochure.pdf",
     keyFeatures: [
       "AM/FM Performance: VSWR ≤ 1.4 | Gain ≥ 20.5 dB.",
@@ -38,7 +38,7 @@ const productsData = {
     title: "Wireless Communication Systems",
     tag: "Wireless Tech",
     image: Home4,
-    description: "Next-gen communication protocols, high-speed connectivity modules, and seamless wireless data transfer systems.",
+    description: "Next-gen communication protocols, high-speed connectivity modules, and seamless wireless data transfer systems. It supports up to 15W fast charging, delivering higher power than traditional chargers. The solution is 100% Made in India, providing a trusted, scalable, and cost-effective alternative to imports",
     brochure: "/Wireless-Charging_BLE-Wi-Fi-Modems-Brochure.pdf",
     keyFeatures: [
       "High-Speed Data Transfer: Supports advanced communication protocols for modern vehicles.",
@@ -63,7 +63,7 @@ const productsData = {
     title: "Advanced Driver Assistance Systems (ADAS)",
     tag: "Autonomous Systems",
     image: Home6,
-    description: "Advanced autonomous driving assistance, in-house RADAR development, and AI safety mechanisms.",
+    description: "Futuretech Dynamics is a leader in RF and microwave technology, specializing in high-performance RADAR systems and Advanced Electronics solutions.Our service portfolio covers custom ADAS development, high-performance RADAR design, telemetry systems, testing & validation, retrofit solutions for existing cars, and expert post-deployment consulting.",
     brochure: "/adas-l3-l4-brochure.pdf",
     keyFeatures: [
       "In-House RADAR Development: Precision-designed for reliable detection and tracking.",
@@ -88,7 +88,7 @@ const productsData = {
     title: "Customised Drone Solution",
     tag: "Drone Tech",
     image: Home5,
-    description: "Precision field mapping, automated workflow systems, and high-endurance UAV solutions for agriculture and defense sectors.",
+    description: "Precision field mapping, automated workflow systems, and high-endurance UAV solutions for agriculture and defense sectors. Built with high-endurance, fast-charging batteries for optimal power efficiency, the platform offers scalable insights for EV farm vehicles and defense UAVs.",
     brochure: "/drone content.pdf",
     keyFeatures: [
       "Precision Field Mapping & Spraying: Enables accurate, automated operations transferable to autonomous agri-vehicles and defense ground units.",

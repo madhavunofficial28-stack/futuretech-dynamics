@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Home1 from '../assets/home_pg-1-image.jpg';
 import Home2 from '../assets/home_pg-2-image.jpg';
 import Home3 from '../assets/home_pg-3-image.jpg';
-import Home4 from '../assets/home_pg-4-image.png';
+import Home4 from '../assets/home_pg-4-image.jpg';
 import Home5 from '../assets/home_pg-5-image.png';
 import Home6 from '../assets/home_pg-6-image.png';
 import Home7 from '../assets/home_pg-7-image.png';
@@ -185,7 +185,7 @@ export default function Home() {
 
   const coreProducts = [
     {
-      id: "shark-antenna",
+      id: "rf-antenna-technology",
       title: "Shark Antenna",
       description: "High-performance shark fin antennas engineered for superior vehicle connectivity, GPS, and multi-band radio frequency reception.",
       image: Home3,
@@ -194,7 +194,7 @@ export default function Home() {
     {
       id: "wireless-communication-systems",
       title: "Wireless Communication Systems",
-      description: "Next-gen communication protocols, high-speed connectivity modules, and seamless wireless data transfer systems.",
+      description: "Next-gen communication protocols, high-speed connectivity modules, and 15W fast charging.",
       image: Home4,
       tag: "Wireless Tech"
     },
@@ -322,7 +322,7 @@ export default function Home() {
                       type="button" 
                       className="relative z-30 flex items-center justify-center gap-3 px-6 py-3 rounded-full text-base font-semibold text-slate-800 bg-gray-100 hover:text-white transition-colors duration-500 overflow-hidden group cursor-pointer border border-gray-200 shadow-md pointer-events-auto"
                     >
-                      <span className="absolute inset-0 bg-emerald-500 rounded-full -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10 pointer-events-none"></span>
+                      <span className="absolute inset-0 bg-[#0052FF] rounded-full -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10 pointer-events-none"></span>
                       <span className="relative z-10 pointer-events-none">Explore Products</span>
                       <svg 
                         className="w-8 h-8 relative z-10 text-slate-800 group-hover:text-slate-800 bg-transparent group-hover:bg-white transition-all duration-300 rounded-full border border-gray-400 group-hover:border-none p-1.5 rotate-45 group-hover:rotate-90 flex-shrink-0 pointer-events-none" 
@@ -341,7 +341,7 @@ export default function Home() {
                       to="/contact" 
                       className="relative z-30 flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl text-base font-semibold text-[#0A192F] bg-gray-100 hover:text-white transition-colors duration-500 overflow-hidden group cursor-pointer border border-gray-200 shadow-sm pointer-events-auto"
                     >
-                      <span className="absolute inset-0 bg-emerald-500 rounded-xl -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10 pointer-events-none"></span>
+                      <span className="absolute inset-0 bg-[#0052FF] rounded-xl -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10 pointer-events-none"></span>
                       <span className="relative z-10 pointer-events-none">Contact Us</span>
                     </Link>
 
@@ -461,7 +461,7 @@ export default function Home() {
                   className="relative bg-white/90 backdrop-blur-md rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-transform duration-300 ease-out flex flex-col border border-slate-200/80 cursor-pointer h-full"
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  <Link to="/products" className="relative h-56 overflow-hidden bg-slate-900 block pointer-events-auto">
+                  <Link to={`/products/${product.id}`} className="relative h-56 overflow-hidden bg-slate-900 block pointer-events-auto">
                     <img 
                       src={product.image} 
                       alt={product.title} 
@@ -483,7 +483,7 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <Link to="/products" className="inline-block mt-2">
+                    <Link to={`/products/${product.id}`} className="inline-block mt-2">
                       <button className="group relative inline-block w-40 h-10 cursor-pointer border-0 bg-transparent p-0 text-xs font-sans">
                         <span className="relative block w-10 h-10 bg-[#0052FF] rounded-full transition-all duration-500 ease-[cubic-bezier(0.65,0,0.076,1)] group-hover:w-full">
                           <span className="absolute inset-y-0 my-auto left-2.5 w-3.5 h-[2px] transition-all duration-500 ease-[cubic-bezier(0.65,0,0.076,1)] group-hover:bg-white group-hover:translate-x-3">

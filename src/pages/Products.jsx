@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 /* images */
 import Home3 from '../assets/home_pg-3-image.jpg';
-import Home4 from '../assets/home_pg-4-image.png';
+import Home4 from '../assets/home_pg-4-image.jpg';
 import Home5 from '../assets/home_pg-5-image.png';
 import Home6 from '../assets/home_pg-6-image.png';
 
@@ -178,12 +178,12 @@ export default function Products() {
                   </p>
                 </div>
 
-                {/* PRODUCT IMAGE */}
-                <Link to={`/products/${prod.id}`} className="relative rounded-2xl overflow-hidden border border-slate-200 group block cursor-pointer shadow-md mt-auto">
+                {/* PRODUCT IMAGE - Exact fit to image dimensions */}
+                <Link to={`/products/${prod.id}`} className="relative rounded-2xl overflow-hidden border border-slate-200 group block cursor-pointer shadow-md mt-auto w-fit max-w-full">
                   <img 
                     src={prod.img} 
                     alt={prod.title} 
-                    className="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                    className="w-auto h-auto max-w-full max-h-[380px] block group-hover:scale-105 transition-transform duration-700 ease-out" 
                   />
                   <div className="absolute inset-0 bg-[#0A192F]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="bg-[#0052FF] text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-lg">
