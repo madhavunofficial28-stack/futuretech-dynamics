@@ -12,7 +12,7 @@ export default function About() {
   const visionTextRef = useRef(null);
   const coreValuesGridRef = useRef(null);
 
-  const missionParagraph = "To enhance automotive comfort and safety through innovative RF, smart electronics, and connected mobility solutions — ensuring every journey is secure, seamless, and enjoyable.";
+  const missionParagraph = "To enhance automotive comfort and safety through innovative RF, smart electronics, and connected mobility solutions - ensuring every journey is secure, seamless, and enjoyable.";
   const visionParagraph = "To be the global leader in automotive technology solutions, recognized for creating safe, comfortable, and intelligent mobility experiences for every driver and passenger.";
 
   useEffect(() => {
@@ -195,12 +195,12 @@ export default function About() {
         📍 Vadodara, Gujarat, India
       </span>
       <span className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-[#0052FF] bg-blue-50 rounded-full border border-blue-200 shadow-sm">
-        🏢 Established 2025
+        Established 2025
       </span>
     </div>
 
     <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-4xl font-normal">
-      FutureTech Dynamics is a cutting-edge division dedicated to enabling the future of mobility. Positioned at the intersection of technology and automotive evolution, we deliver advanced solutions in smart electronics, connectivity, and mechatronic systems — catering to the fast-evolving demands of the automotive and EV markets.
+      FutureTech Dynamics is a cutting-edge division dedicated to enabling the future of mobility. Positioned at the intersection of technology and automotive evolution, we deliver advanced solutions in smart electronics, connectivity, and mechatronic systems "catering to the fast-evolving demands of the automotive and EV markets".
     </p>
   </div>
   

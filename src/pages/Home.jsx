@@ -428,7 +428,7 @@ export default function Home() {
       </section>
 
       {/* 3. OUR CORE PRODUCTS SECTION */}
-      <section className="py-24 bg-transparent relative z-10 w-full">
+      <section className="py-10 bg-transparent relative z-10 w-full">
         <div className="w-full px-6 sm:px-8 lg:px-16 xl:px-24">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#0052FF] text-sm font-bold tracking-widest uppercase bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200 inline-block mb-3">
